@@ -1,0 +1,130 @@
+FILE
+O "file buffer" é um registo designado FILE, que contém
+(entre outros) um campo vetor de carateres, um campo para
+indicar o estado de preenchimento do buffer e um campo de
+nome que irá estar associado a um dado ficheiro.
+
+
+
+fopen e fclose
+
+FILE *fopen(char *filename, char *mode)
+int fclose(FILE *f)
+
+"r" – para leitura (read)
+"w" – para escrita (write)
+"a" – para acrescentar(append)
+"b" – formato binário(binary)
+
+Para guardar as alterações sem fechar o ficheiro:
+int fflush(FILE *f)
+
+
+Exemplo:
+FILE *f;
+char nomef[100];
+printf("nome do ficheiro? ");
+scanf("%s", nomef);
+f=fopen(nomef,"w");
+...
+fclose(f);
+
+
+
+
+
+
+fprintf e fscanf
+int fprintf(FILE *f, string_de_formato [, expr1, …, exprn])
+int fscanf(FILE *f, string_de_formato, &var1 [,&var2 …, &varn])
+
+
+fprintf e fscanf comportam-se exatamente como printf e scanf,
+respetivamente, só que na escrita e leitura referem-se a um ficheiro
+em vez de escreverem no ecrã e lerem do teclado.
+
+
+
+Exemplo:
+FILE *f;
+int numero;
+f=fopen("exemplo.txt","w");
+scanf("%d", &numero);
+fprintf(f, "um numero lido: %d\n", numero);
+fclose(f);
+
+
+Exemplo:
+#include <stdio.h>
+int main()
+{
+int i,k;
+char *cidade[4] = {"Porto", "Aveiro", "Coimbra", "Lisboa"};
+float temp[4] = {12.5, 11.8, 12.2, 14};
+FILE *fout; /* declara variável de ficheiro */
+fout = fopen("exp.txt", "w"); /* abre ficheiro para escrita*/
+for (i = 0; i < 4; i++)
+fprintf(fout,"%s %f\r\n", cidade[i], temp[i]);
+fclose(fout);
+printf("Escrita do ficheiro terminada\n");
+}
+
+
+Exemplo:
+Controlo de erros
+#include <stdio.h>
+int main()
+{
+int i,k;
+char *cidade[4] = {"Porto", "Aveiro", "Coimbra", "Lisboa"};
+float temp[4] = {12.5, 11.8, 12.2, 14};
+
+FILE *fout; /* declara variável de ficheiro */
+fout = fopen("exp.txt", "w"); /* abre ficheiro para escrita */
+
+if (fout == NULL){ /* se apontador inválido */
+    printf("Impossível criar o ficheiro\n");
+    return 1; /* termina */
+}
+    for (i = 0; i < 4; i++) 
+    {
+    k = fprintf(fout,"%s %f\r\n", cidade[i], temp[i]);
+    printf("%d\n", k);
+    }
+fclose(fout);
+printf("Escrita do ficheiro terminada\n");
+}
+
+
+
+
+
+fgetc e fputc
+
+São funções correspondentes a getchar() e putchar(c) mas que
+admitem a especificação do ficheiro
+
+
+int fgetc(FILE *f)
+int fputc(int c, FILE *f)
+
+
+Exemplo:
+int c;
+
+FILE *ifp, *ofp;
+c = fgetc(ifp); /* ler um caracter */
+
+fputc(c, ofp); /* escrever um caracter */
+
+
+
+
+ficheiros Binarios nao sai no teste pratico apenas teorico 
+
+
+
+
+
+
+Ficheiro binários

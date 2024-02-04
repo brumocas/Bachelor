@@ -1,0 +1,168 @@
+Como definir estrutura
+
+struct [tag]{
+type member1;
+type member2;
+[..]
+} [variables];
+
+
+Exemplo:
+/*Declaração do registo:*/
+struct data {
+int dia, mes, ano;
+};
+
+
+Declaração do registo e
+variável:
+struct data {
+int dia, mes, ano;
+} uma_data;
+
+Declaração do registo e
+variável com inicialização:
+struct data {
+int dia, mes, ano;
+} data_hoje = {4, 1, 2021};
+
+
+
+
+
+
+
+A palavra-chave typedef
+
+typedef int inteiro;
+typedef float real;
+int main() {
+inteiro numero1 = 2;
+real numero2 = 2.65;
+}
+
+
+Registos com typedef 
+
+typedef struct
+type member1;
+type member2;
+[..]
+} alias;    
+
+
+
+Exemplo:
+typedef struct {
+float x, y;
+} ponto;
+
+typedef struct {
+char nome[52];
+int idade;
+float salario;
+} pessoa;
+...
+ponto p, q, curva[100];
+pessoa novo, antigo, lista[60];
+ponto *pp;
+pessoa *prox;
+
+
+
+
+Registos e sizeof
+
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+char nome[52];
+int idade;
+float salario;
+} pessoa;
+
+int main()
+{
+pessoa x = { "Ana", 35, 1495 };
+printf("%ld\n", sizeof(pessoa)); /* escreve 60 */
+printf("%ld\n", sizeof(x)); /* escreve 60 */
+strcpy(x.nome, "Ricardo");
+printf("%ld\n", sizeof(x)); /* escreve 60 */
+
+
+
+
+
+Registos em registos
+
+struct data {
+int ano, mes, dia;
+};
+struct hora {
+int horas, mins, segs;
+};
+
+struct data_hora {
+struct data d;
+struct hora h;
+};
+
+struct data_hora hoje = {{2021, 1, 4}, {16, 05, 43}};
+hoje.h.segs++;
+if (hoje.h.segs == 60)
+{
+hoje.h.mins++;
+hoje.h.segs = 0;
+}
+
+
+
+
+
+
+
+
+Exemplo
+
+typedef struct {
+int dia, mes, ano;
+} data;
+
+typedef struct {
+char proprio[20];
+char apelido[3][15];
+} nome;
+
+typedef struct {
+nome id;
+data entrada;
+int idade;
+float salario;
+} funcionario;
+
+
+
+
+
+
+
+
+
+Tipo de dados enumerado (enum)
+
+
+#include <stdio.h>
+
+enum semana { domingo, segunda, terca,
+quarta, quinta, sexta, sabado
+};
+
+
+int main()
+{
+enum semana hoje;
+hoje = segunda;
+printf("Dia %d", hoje + 1);
+}
+

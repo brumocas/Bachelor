@@ -1,0 +1,143 @@
+Leitura de strings
+
+Pode ser feita utilizando as rotinas scanf, gets e fgets.
+
+char nome [30];
+
+scanf("%s", nome);
+/* lê uma palavra (sequência de caracteres até encontrar o carácter ' ' - espaço) */
+
+gets(nome);
+/* lê uma frase (sequência de caracteres até encontrar o carácter '\n') */
+
+fgets(nome, max, stdin);
+/* lê uma frase com máximo de max-1 caracteres */
+
+
+
+
+
+
+
+
+Escrita de strings
+
+Pode ser feita utilizando printf e campo de formatação "%s".
+Alternativamente, utilizando a função puts.
+
+char nome [30];
+printf("%s", nome); /* escreve os caracteres de nome até encontrar ‘\0’ */
+
+puts(nome); 
+/* o mesmo que printf("%s\n", nome); */
+
+
+
+
+
+
+
+
+
+
+Operações com strings
+
+int strlen(char *string); /* comprimento */
+
+char *strcpy(char *dest, char *src); /* cópia */
+
+char *strcat(char *string1, char *string2); /* concatenação juntar */
+
+Exemplo
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+char nome [30] = "Francisco Alves", nome_2 [40];
+printf("%d\n", strlen(nome)); /* o que imprime? */
+strcpy(nome_2, nome);
+puts(nome_2); /* o que imprime? */
+strcat(nome_2, nome);
+puts(nome_2); /* o que imprime? */
+
+
+
+
+
+
+
+
+
+
+int strcmp(char *string1, char *string2); /* comparação, retorna 0 se as strings são iguais */
+
+char *strchr(char *string, int c); /* localização de um carácter */
+
+char *strstr(char *string1, char *string2);/* localização de sub-string */
+
+Exemplo
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char nome [30] = "Francisco Alves", nome_2 [40];
+strcpy(nome_2, nome);
+printf("%d\n", strcmp(nome, nome_2)); /* o que
+imprime? */
+puts(strchr(nome, 'a')); /* o que imprime? */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conversões string-número
+
+double atof(char *string); 
+/* converte string em double */
+
+int atoi(char *string); 
+/* converte string em inteiro */
+
+
+Exemplo 
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+char numero [10] = "1234", numero_2 [8] = "12.5";
+printf("%d\n", atoi(numero)); /* o que imprime? */
+printf("%f\n", atof(numero_2)); /* o que imprime? */
+printf("%d\n", atoi(numero_2)); /* o que imprime? */
+}
+
+
+
+
+
+
+
+
+Strings formatadas - sprintf
+
+
+Cria strings formatadas. Funciona como a função printf mas guarda o
+resultado numa string em vez de mostrar no ecrã.
+#include <stdio.h>
+int main()
+{
+char v[10][30]; /* vetor de 10 strings com tamanho 30 */
+int i;
+for(i=0; i<10; i++)
+sprintf(v[i], "%d %d", i, i*i);
+for(i=0; i<10; i++)
+puts(v[i]); /* o que imprime? */
+}
