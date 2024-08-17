@@ -59,25 +59,6 @@ Ensure you have the following software installed:
 
 Each project directory contains specific instructions on how to compile and run the code. Follow the README files or instructions within each directory for detailed usage information.
 
-### Example
-
-For the `automation/trabalho1` project:
-
-1. Navigate to the project directory:
-   ```sh
-   cd automation/trabalho1
-   ```
-
-2. Compile the project:
-   ```sh
-   gcc trabalho1.c -o trabalho1
-   ```
-
-3. Run the executable:
-   ```sh
-   ./trabalho1
-   ```
-
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
