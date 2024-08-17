@@ -20,9 +20,9 @@ Welcome to the Electrical Engineering Bachelor Projects repository! This reposit
    - **Directory:** `automation/trabalho1`
    - **Description:** Contains projects and assignments related to automation coursework.
 
-2. **FPS (Frequency Power Stability)**
+2. **FPS (Fundamentals of Signal Processing)**
    - **Directory:** `fps`
-   - **Description:** Contains projects and assignments related to Fundamental Signal Processing.
+   - **Description:** Contains projects and assignments related to Fundamentals of Signal Processing.
 
 3. **Programming 1**
    - **Directory:** `prog1/aulas_pl`
@@ -34,8 +34,7 @@ Welcome to the Electrical Engineering Bachelor Projects repository! This reposit
 
 5. **Computer Systems**
    - **Directory:** `sc`
-   - **Description:** Contains projects and assignments related to signal control studies.
-   - **Last Update:** 6 months ago
+   - **Description:** Contains projects and assignments related to Computer Systems studies.
 
 ## Getting Started
 
@@ -55,12 +54,7 @@ Ensure you have the following software installed:
    ```sh
    git clone https://github.com/yourusername/EE_Bachelor_Projects.git
    ```
-
-2. Navigate to the project directory:
-   ```sh
-   cd EE_Bachelor_Projects
-   ```
-
+   
 ## Usage
 
 Each project directory contains specific instructions on how to compile and run the code. Follow the README files or instructions within each directory for detailed usage information.
@@ -97,9 +91,3 @@ Contributions are what make the open-source community such an amazing place to l
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name - [your.email@example.com](mailto:your.email@example.com)
-
-Project Link: [https://github.com/yourusername/EE_Bachelor_Projects](https://github.com/yourusername/EE_Bachelor_Projects)
