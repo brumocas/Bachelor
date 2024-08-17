@@ -52,7 +52,7 @@ Ensure you have the following software installed:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/EE_Bachelor_Projects.git
+   git clone https://github.com/brumocas/EE_Bachelor_Projects.git
    ```
    
 ## Usage
